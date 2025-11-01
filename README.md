@@ -1,70 +1,176 @@
-# Getting Started with Create React App
+# Product Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application for managing products with authentication and CRUD operations.
+
+## Struktur Penting
+
+# Product Management App 📦
+
+> Aplikasi web pengelolaan produk dengan autentikasi dan CRUD operations.
+
+## Teknologi 🛠️
+
+- **Frontend:** React, Bootstrap, Axios
+- **Backend:** Node.js, MySQL + JWT
+
+## Fitur ⭐
+
+- Login/Register
+- CRUD Produk & Kategori
+- Protected Routes
+- Responsive Design
+
+## Instalasi 🚀
+
+```bash
+# Install & jalankan frontend
+npm install
+npm start
+
+# Install & jalankan backend
+cd server
+npm install
+cp .env.example .env  # Setup environment
+npm start
+```
+
+## API Endpoints 🔌
+
+```plaintext
+# Auth
+POST /auth/register  - Register
+POST /auth/login     - Login
+
+# Products
+GET    /products     - List produk
+POST   /products     - Tambah produk
+PUT    /products/:id - Update produk
+DELETE /products/:id - Hapus produk
+
+# Categories
+GET /categories      - List kategori
+```
+
+## Lisensi 📜
+
+MIT
+
+## Features
+
+- User Authentication (Register/Login)
+- Product Management (Create, Read, Update, Delete)
+- Category Management
+- Protected Routes
+- Responsive Design with React Bootstrap
+
+## Tech Stack
+
+### Frontend
+
+- React.js
+- React Router v6
+- React Bootstrap
+- Axios
+
+### Backend
+
+- Node.js
+- Express.js
+- MySQL
+- JWT Authentication
+
+## Project Structure
+
+```
+src/
+├── api/              # API dan autentikasi
+├── components/       # Komponen yang dapat digunakan ulang
+│   ├── PrivateRoute.js  # Proteksi route dashboard
+│   └── PublicRoute.js   # Proteksi route login/register
+├── pages/           # Halaman utama
+│   ├── Dashboard.js  # Halaman pengelolaan produk
+│   ├── Login.js      # Halaman login
+│   └── Register.js   # Halaman registrasi
+└── App.js          # Konfigurasi routing
+
+server/             # Backend
+├── .env           # Konfigurasi database & JWT
+└── index.js       # Entry point server
+```
+
+## Setup & Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/MuhammadWildanArifMaulana/latihan-frontend
+cd latihan-frontend
+```
+
+2. Install dependencies:
+
+```bash
+# Install frontend dependencies
+npm install
+
+# Install backend dependencies
+cd server
+npm install
+```
+
+3. Setup environment variables:
+
+- Create .env file in server folder
+- Add required environment variables (see .env.example)
+
+4. Start the application:
+
+```bash
+# Start backend server (from server directory)
+npm run start
+
+# Start frontend development server (from root directory)
+npm start
+```
+
+## Usage
+
+1. Register a new account
+2. Login with your credentials
+3. Access the dashboard to manage products:
+   - View all products
+   - Add new products
+   - Edit existing products
+   - Delete products
+   - Categorize products
+
+## API Endpoints
+
+### Authentication
+
+- POST /auth/register - Register new user
+- POST /auth/login - User login
+
+### Products
+
+- GET /products - Get all products
+- POST /products - Create new product
+- PUT /products/:id - Update product
+- DELETE /products/:id - Delete product
+
+### Categories
+
+- GET /categories - Get all categories
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start` - Run development server
+- `npm run build` - Build for production
 
-### `npm start`
+## Contributors
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Muhammad Wildan Arif Maulana
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## License
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
