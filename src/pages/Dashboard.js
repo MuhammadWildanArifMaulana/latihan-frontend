@@ -36,7 +36,6 @@ function Dashboard() {
   const getAuthHeaders = useCallback(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      // no token -> redirect to login
       navigate("/login");
       return null;
     }
@@ -184,7 +183,6 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    // Redirect to login immediately if no token
     const token = localStorage.getItem("token");
     if (!token) {
       navigate("/login");
@@ -361,14 +359,11 @@ function Dashboard() {
                 }
               />
             </Form.Group>
-
-            {/* image_url removed: field no longer exists in products table */}
           </Modal.Body>
           <Modal.Footer>
             <Button
               variant="secondary"
               onClick={() => {
-                // reset via Modal onHide handler will also run, but keep simple close here
                 setShow(false);
                 setForm({
                   name: "",
