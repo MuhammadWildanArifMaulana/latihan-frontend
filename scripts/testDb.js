@@ -8,7 +8,9 @@
       port: parseInt(process.env.DB_PORT || "5432"),
       database: process.env.DB_NAME || "tugas_fe_kedua",
       user: process.env.DB_USER || "postgres",
-      password: process.env.DB_PASSWORD || "postgrecuy",
+      // Do NOT hardcode passwords here. Use environment variables (.env) instead.
+      // If DB_PASSWORD is not set, leave undefined so no password is sent.
+      password: process.env.DB_PASSWORD || undefined,
     };
     console.log("Using DB config:", cfg);
     const pool = new Pool(cfg);
